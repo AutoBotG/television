@@ -1,2 +1,5 @@
 default: --no-source --color --format pretty
 desktop: -t @desktop
+desktop: -t @desktop
+mobile: -t @mobile
+tablet: -t @tablet

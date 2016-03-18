@@ -8,6 +8,6 @@ Feature:
   Background:
     Given I am on televisions review page
 
-    @gg @desktop
+  @desktop @mobile @tablet
   Scenario: Television landing page has a title
     Then I should see list of review results

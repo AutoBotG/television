@@ -6,8 +6,8 @@ Feature:
 
 
   Background:
-    Given I am on televisions review page
+    Given I am on review page for televisions
 
   @desktop @mobile @tablet
-  Scenario: Television landing page has a title
+  Scenario: Television landing page has results
     Then I should see list of review results

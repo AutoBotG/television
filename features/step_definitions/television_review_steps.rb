@@ -1,4 +1,4 @@
-Given(/^I am on (televisions) review page$/) do |category|
+Given(/^I am on review page for (televisions)$/) do |category|
   which.review.load(category: category )
 end
 

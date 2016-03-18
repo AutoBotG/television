@@ -1,0 +1,4 @@
+defaults: &default
+  root_url: http://www.which.co.uk
+prod:
+  <<: *default

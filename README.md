@@ -66,10 +66,10 @@ rake local:desktop:chrome_desktop_browser OPTS='<scenario path>'
 ### running using cucumber command not not rake
 
 if you choose to run with cucumber command you will have to pass some environment variables
-DRIVER - chrome_desktop_browser,chrome_mobile_browser,chrome_tablet_browser default is chrome_mobile_browser
-ENVIRONMENT -  prod (default is prod)
-PLATFORM - mobile, desktop or tablet (default is mobile)
-BASE_URL - http://www.which.co.uk (this is configred in /config/app_config.yml)
+* DRIVER - chrome_desktop_browser,chrome_mobile_browser,chrome_tablet_browser default is chrome_mobile_browser
+* ENVIRONMENT -  prod (default is prod)
+* PLATFORM - mobile, desktop or tablet (default is mobile)
+* BASE_URL - http://www.which.co.uk (this is configred in /config/app_config.yml)
 
 ### Frame work
 Designed so that responsive apps can be tested

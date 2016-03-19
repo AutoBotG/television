@@ -63,7 +63,7 @@ rake local:desktop:chrome_desktop_browser OPTS='-t <tag name>'
 rake local:desktop:chrome_desktop_browser OPTS='<scenario path>'
 ```
 
-### running using cucumber command not not rake
+### running using cucumber command
 
 if you choose to run with cucumber command you will have to pass some environment variables
 * DRIVER - chrome_desktop_browser,chrome_mobile_browser,chrome_tablet_browser default is chrome_mobile_browser

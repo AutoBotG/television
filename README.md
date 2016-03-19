@@ -72,24 +72,24 @@ if you choose to run with cucumber command you will have to pass some environmen
 * BASE_URL - http://www.which.co.uk (this is configred in /config/app_config.yml)
 
 ### Frame work
-Designed so that responsive apps can be tested
-Page object SitePrism has been used
-We have divided the page objects into 4 modules base, mobile, desktop and tablet
-As the names suggest all the common behaviour is captured in the base module, all the view port specific behaviour is moved into the respective modules
-All the helper files are listed in lib/helpers
-All the page objects are listed in lib/page_objects
+* Designed so that responsive apps can be tested
+* Page object SitePrism has been used
+* We have divided the page objects into 4 modules base, mobile, desktop and tablet
+* As the names suggest all the common behaviour is captured in the base module, all the view port specific behaviour is moved into the respective modules
+* All the helper files are listed in lib/helpers
+* All the page objects are listed in lib/page_objects
 
 ### Page objects
-Depending on which view port we want to run the tests, indicated by the PLATFORM env variable
-App class present in lib/page_objects initialises only the required page objects, which is wrapped into a method.
+* Depending on which view port we want to run the tests, indicated by the PLATFORM env variable
+* App class present in lib/page_objects initialises only the required page objects, which is wrapped into a method.
 The name of the method is the name of the page object (lowercase)
 
-SitePrism::Page, SitePrismSubclass we are patching it to get all the classes that have inherited SitePrism:Page.
+* SitePrism::Page, SitePrismSubclass we are patching it to get all the classes that have inherited SitePrism:Page.
 We are using this list of classes that have inherited SitePrism:Page to initialize in the App class
 
 
 ###Still to do
-At the moment we are registering all the drivers even though we need only one driver registration per run
+* At the moment we are registering all the drivers even though we need only one driver registration per run
 
 
 

@@ -10,5 +10,18 @@ module Base
     element :add_compare_link, 'frm-comparison button.action-add'
     element :image, '.product-listing__thumb img'
 
+    def info
+      {manufacturer: manufacturer.text,
+       model: model.text,
+       key_fact: key_fact.text,
+       price: price_in_float,
+       }
+    end
+
+    private
+    def price_in_float
+      price.text.gsub('£','').to_f
+    end
+
   end
 end

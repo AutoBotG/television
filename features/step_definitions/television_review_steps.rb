@@ -10,27 +10,11 @@ Then(/^I should see list of review results$/) do
 end
 
 Then(/^review result should provide the following information$/) do |table|
-  assertion_messages = []
-  table.hashes.each do |row|
-    begin
-      expect(which.review.results.first).to send("have_#{row[:information]}")
-    rescue RSpec::Expectations::ExpectationNotMetError, Capybara::ElementNotFound => e
-      assertion_messages << (e.message + "#{row}")
-    end
-  end
-  expect(assertion_messages).to eql []
+  iterate_through_assertions(table) { |row| expect(which.review.results.first).to send("have_#{row[:information]}") }
 end
 
 Then(/^I should have the following sorting options$/) do |table|
-  assertion_messages = []
-  table.hashes.each do |row|
-    begin
-      expect(which.review.sort_dropdown).to have_option(row[:options])
-    rescue RSpec::Expectations::ExpectationNotMetError, Capybara::ElementNotFound => e
-      assertion_messages << (e.message + "#{row}")
-    end
-  end
-  expect(assertion_messages).to eql []
+  iterate_through_assertions(table) { |row| expect(which.review.sort_dropdown).to have_option(row[:options]) }
 end
 
 When(/^I sort the results by "([^"]*)"$/) do |option|
@@ -65,4 +49,16 @@ Then(/^the review results should be refined by screen size (.+)$/) do |option|
   facts =  which.review.results.map {|result| result.info[:key_fact][/\d+/].to_i}
   range = option.scan(/\d+/)
   facts.each {|fact| expect(fact).to be_between(range[0].to_i, range[1].to_i)}
+end
+
+def iterate_through_assertions(table)
+  assertion_messages = []
+  table.hashes.each do |row|
+    begin
+      yield row
+    rescue RSpec::Expectations::ExpectationNotMetError, Capybara::ElementNotFound => e
+      assertion_messages << (e.message + "#{row}")
+    end
+  end
+  expect(assertion_messages).to eql []
 end

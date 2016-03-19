@@ -1,4 +1,4 @@
-# television
+# Television
 Sample test frame work with Ruby , Cucumber and Capybara
 
 ## Steps to set up
@@ -63,9 +63,9 @@ rake local:desktop:chrome_desktop_browser OPTS='-t <tag name>'
 rake local:desktop:chrome_desktop_browser OPTS='<scenario path>'
 ```
 
-### running using cucumber command
+### Running using cucumber command
 
-if you choose to run with cucumber command you will have to pass some environment variables
+If you choose to run with cucumber command you will have to pass some environment variables
 * DRIVER - chrome_desktop_browser,chrome_mobile_browser,chrome_tablet_browser default is chrome_mobile_browser
 * ENVIRONMENT -  prod (default is prod)
 * PLATFORM - mobile, desktop or tablet (default is mobile)
